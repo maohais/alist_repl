@@ -1,10 +1,6 @@
 #!/bin/sh
 
-API_URL="https://api.github.com/repos/uubulb/alist-freebsd/releases/latest"
-
-DOWNLOAD_URL=$(curl -s $API_URL | jq -r ".assets[] | select(.name | contains(\"alist\")) | .browser_download_url")
-
-curl -L $DOWNLOAD_URL -o alist
+curl -L https://github.com/maohais/alist-freebsd/releases/latest/download/alist -o alist
 
 chmod +x alist
 
